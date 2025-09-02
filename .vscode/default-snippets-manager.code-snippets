@@ -1,0 +1,19 @@
+{
+	"initialize Supabase": {
+		"prefix": "initialize Supabase",
+		"description": "initialize Supabase",
+		"scope": "dart",
+		"body": [
+			"void main() async {\r",
+			"  WidgetsFlutterBinding.ensureInitialized();\r",
+			"\r",
+			"  await Supabase.initialize(\r",
+			"    url: Consts.kSUPABASE_URL,\r",
+			"    anonKey: Consts.kSUPABASE_ANON_KEY,\r",
+			"  );\r",
+			"\r",
+			"  runApp(MyApp());\r",
+			"}"
+		]
+	}
+}
