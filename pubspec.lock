@@ -33,6 +33,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
+  appwrouter:
+    dependency: "direct main"
+    description:
+      name: appwrouter
+      sha256: bbabf15e18a7f38ee4f2f9df16fdc9905435fdb9c01aa3b4320f9ed7508d00f4
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.7"
   async:
     dependency: transitive
     description:
@@ -89,6 +97,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
+  dart_appwrite:
+    dependency: transitive
+    description:
+      name: dart_appwrite
+      sha256: f773e28b67268b0e48254bfde93395388cb0e8f208f7491e549f11cac6af7883
+      url: "https://pub.dev"
+    source: hosted
+    version: "11.0.3"
   fake_async:
     dependency: transitive
     description:
@@ -144,6 +160,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.4"
+  go_router:
+    dependency: "direct main"
+    description:
+      name: go_router
+      sha256: eb059dfe59f08546e9787f895bd01652076f996bcbf485a8609ef990419ad227
+      url: "https://pub.dev"
+    source: hosted
+    version: "16.2.1"
   gotrue:
     dependency: transitive
     description:
