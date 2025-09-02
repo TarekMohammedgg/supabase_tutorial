@@ -1,5 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:supabase_tutorial/supabase_helper.dart';
 import 'package:supabase_tutorial/utils/utils/app_router.dart';
 import 'package:supabase_tutorial/utils/utils/app_style.dart';
 import 'package:supabase_tutorial/widgets/custom_text_button.dart';
@@ -13,6 +17,7 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+
   final TextEditingController registerEmailController = TextEditingController();
 
   final TextEditingController registerPasswordController =
@@ -57,6 +62,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                       SizedBox(height: 12),
                       CustomTextFormField(
+                       
                         controller: registerPasswordController,
                         hintText: "Password",
                       ),
@@ -73,7 +79,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 textAlign: TextAlign.center,
                                 style: AppStyle.stylebold16,
                               ),
-                        onPressed: () async {},
+                        onPressed: ()  {
+                          if(registerFormKey.currentState!.validate()){
+                          SupabaseHelper.register(email: registerEmailController.text , password: registerPasswordController.text) ;
+                          context.go(AppRouter.kLoginScreen)  ; 
+                             setState(() {
+                            isLoading = !isLoading ; 
+                          });
+                          }
+                         
+                        },
                       ),
                     ],
                   ),

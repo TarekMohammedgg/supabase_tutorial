@@ -1,11 +1,12 @@
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:supabase_tutorial/supabase_helper.dart';
 import 'package:supabase_tutorial/utils/utils/app_images.dart';
 import 'package:supabase_tutorial/utils/utils/app_router.dart';
 import 'package:supabase_tutorial/utils/utils/app_style.dart';
 import 'package:supabase_tutorial/widgets/custom_text_button.dart';
 import 'package:supabase_tutorial/widgets/custom_text_form_field.dart';
-
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({super.key});
@@ -18,6 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController loginEmailController = TextEditingController();
 
   final TextEditingController loginPasswordController = TextEditingController();
+
 
   bool isLoading = false;
   @override
@@ -62,8 +64,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                 textAlign: TextAlign.center,
                                 style: AppStyle.stylebold16,
                               ),
-                        onPressed: ()  {
-                         
+                        onPressed: () {
+                         if(signInFormKey.currentState!.validate()){
+                          SupabaseHelper.login(email:  loginEmailController.text , password: loginPasswordController.text) ;
+                          context.go(AppRouter.kHomeScreen)  ;    
+                          setState(() {
+                            isLoading = !isLoading ; 
+                          });
+                         }
                         },
                       ),
                       SizedBox(height: 8),

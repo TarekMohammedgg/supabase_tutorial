@@ -16,7 +16,7 @@ class CustomTextFormField extends StatelessWidget {
       controller: controller,
       validator: (value) {
         if (value == null || value.trim().isEmpty) {
-          return "Please Enter your Email";
+          return "Please Enter value in the field";
         } else {
           return null;
         }
