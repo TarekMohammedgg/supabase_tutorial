@@ -4,11 +4,13 @@ import 'package:go_router/go_router.dart';
 import 'package:supabase_tutorial/screens/authentication/login_screen.dart';
 import 'package:supabase_tutorial/screens/authentication/register_screen.dart';
 import 'package:supabase_tutorial/screens/home/home_screen.dart';
+import 'package:supabase_tutorial/screens/upload_images/upload_images.dart';
 
 abstract class AppRouter {
   static const kLoginScreen = '/';
   static const kRegisterScreenn = '/RegisterScreen';
-  static const kHomeScreen = "/HomeScreen"; 
+  static const kHomeScreen = "/HomeScreen";
+  static const kuploadImage = "/UploadImages";
 
   static final router = GoRouter(
     routes: [
@@ -20,6 +22,8 @@ abstract class AppRouter {
         path: kRegisterScreenn,
         builder: (context, state) =>  RegisterScreen(),
       ),  
-      GoRoute(path: kHomeScreen , builder: (context , state) => HomeScreen()  )  ],
+      GoRoute(path: kHomeScreen , builder: (context , state) => HomeScreen()  ) , 
+      GoRoute(path : kuploadImage , builder:(context , state) =>UploadImages()  )   ],
   );
+  
 }

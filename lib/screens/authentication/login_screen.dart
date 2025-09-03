@@ -67,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         onPressed: () {
                          if(signInFormKey.currentState!.validate()){
                           SupabaseHelper.login(email:  loginEmailController.text , password: loginPasswordController.text) ;
-                          context.go(AppRouter.kHomeScreen)  ;    
+                          context.go(AppRouter.kuploadImage)  ;    
                           setState(() {
                             isLoading = !isLoading ; 
                           });
